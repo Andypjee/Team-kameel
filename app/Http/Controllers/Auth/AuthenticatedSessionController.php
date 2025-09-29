@@ -14,6 +14,7 @@ use Inertia\Response;
 class AuthenticatedSessionController extends Controller
 {
     /**
+<<<<<<< HEAD
      * Show the login page.
      */
     public function create(Request $request): Response
@@ -21,6 +22,15 @@ class AuthenticatedSessionController extends Controller
         return Inertia::render('auth/login', [
             'canResetPassword' => Route::has('password.request'),
             'status' => $request->session()->get('status'),
+=======
+     * Display the login view.
+     */
+    public function create(): Response
+    {
+        return Inertia::render('Auth/Login', [
+            'canResetPassword' => Route::has('password.request'),
+            'status' => session('status'),
+>>>>>>> master
         ]);
     }
 
@@ -44,6 +54,10 @@ class AuthenticatedSessionController extends Controller
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
         $request->session()->regenerateToken();
 
         return redirect('/');

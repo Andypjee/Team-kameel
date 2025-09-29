@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import 'tailwindcss';
 
 @plugin 'tailwindcss-animate';
@@ -139,3 +140,8 @@
         @apply bg-background text-foreground;
     }
 }
+=======
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+>>>>>>> master

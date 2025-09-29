@@ -40,6 +40,10 @@ return [
             'busy_timeout' => null,
             'journal_mode' => null,
             'synchronous' => null,
+<<<<<<< HEAD
+=======
+            'transaction_mode' => 'DEFERRED',
+>>>>>>> master
         ],
 
         'mysql' => [
@@ -147,7 +151,11 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
+<<<<<<< HEAD
             'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+=======
+            'prefix' => env('REDIS_PREFIX', Str::slug((string) env('APP_NAME', 'laravel')).'-database-'),
+>>>>>>> master
             'persistent' => env('REDIS_PERSISTENT', false),
         ],
 

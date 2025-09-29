@@ -5,6 +5,10 @@ use App\Http\Controllers\Auth\ConfirmablePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use App\Http\Controllers\Auth\EmailVerificationPromptController;
 use App\Http\Controllers\Auth\NewPasswordController;
+<<<<<<< HEAD
+=======
+use App\Http\Controllers\Auth\PasswordController;
+>>>>>>> master
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
@@ -14,14 +18,22 @@ Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
         ->name('register');
 
+<<<<<<< HEAD
     Route::post('register', [RegisteredUserController::class, 'store'])
         ->name('register.store');
+=======
+    Route::post('register', [RegisteredUserController::class, 'store']);
+>>>>>>> master
 
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
         ->name('login');
 
+<<<<<<< HEAD
     Route::post('login', [AuthenticatedSessionController::class, 'store'])
         ->name('login.store');
+=======
+    Route::post('login', [AuthenticatedSessionController::class, 'store']);
+>>>>>>> master
 
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
         ->name('password.request');
@@ -51,9 +63,15 @@ Route::middleware('auth')->group(function () {
     Route::get('confirm-password', [ConfirmablePasswordController::class, 'show'])
         ->name('password.confirm');
 
+<<<<<<< HEAD
     Route::post('confirm-password', [ConfirmablePasswordController::class, 'store'])
         ->middleware('throttle:6,1')
         ->name('password.confirm.store');
+=======
+    Route::post('confirm-password', [ConfirmablePasswordController::class, 'store']);
+
+    Route::put('password', [PasswordController::class, 'update'])->name('password.update');
+>>>>>>> master
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
         ->name('logout');
